@@ -17,8 +17,8 @@ export class AppMenuComponent implements OnInit {
             {
                 label: 'Text',
                 items: [
-                    { label: 'Text Analyser', icon: 'pi pi-fw pi-file', routerLink: ['/'] },
-                    { label: 'Difference Checker', icon: 'pi pi-fw pi-check-square', routerLink: ['/diff-checker'] }
+                    { label: 'Text Analyser', icon: 'pi pi-fw pi-file', routerLink: ['/text/text-analyzer'] },
+                    { label: 'Difference Checker', icon: 'pi pi-fw pi-check-square', routerLink: ['/text/diff-checker'] }
                 ]
             }
         ];
