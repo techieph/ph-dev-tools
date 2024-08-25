@@ -6,7 +6,7 @@
         "ng": "ng",
         "start": "ng serve",
         "build": "ng build",
-        "build:github-pages": "ng build --prod --base-href /ph-dev-tools/",
+        "build:github-pages": "ng build --configuration production --base-href /ph-dev-tools/",
         "test": "ng test",
         "lint": "ng lint",
         "e2e": "ng e2e"
