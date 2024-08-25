@@ -25,10 +25,10 @@ jobs:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: npm ci
-    - run: npm run build --base-href sakai-ng --if-present
+    - run: npm run build --base-href ph-dev-tools --if-present
     - name: Deploy to GitHub Pages
       uses: JamesIves/github-pages-deploy-action@v4
       with:
-        folder: ./dist/sakai-ng
+        folder: ./dist/ph-dev-tools
         branch: github-pages
         token: ${{ secrets.GITHUB_TOKEN }}
