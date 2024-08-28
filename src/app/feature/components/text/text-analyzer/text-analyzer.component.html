@@ -8,6 +8,48 @@
             </div>
         </div>
     </div>
+    <div class="grid" *ngIf="text">
+        <div class="col-3">
+            <div class="card mb-0">
+                <div class="flex justify-content-between">
+                    <div>
+                        <span class="block text-500 font-medium mb-2">Characters</span>
+                        <div class="text-900 font-medium text-3xl">{{ charsCount }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card mb-0">
+                <div class="flex justify-content-between">
+                    <div>
+                        <span class="block text-500 font-medium mb-2">Words</span>
+                        <div class="text-900 font-medium text-3xl">{{ wordsCount }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card mb-0">
+                <div class="flex justify-content-between">
+                    <div>
+                        <span class="block text-500 font-medium mb-2">Paragraphs</span>
+                        <div class="text-900 font-medium text-3xl">{{ paragraphCount }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="card mb-0">
+                <div class="flex justify-content-between">
+                    <div>
+                        <span class="block text-500 font-medium mb-2">White Spaces</span>
+                        <div class="text-900 font-medium text-3xl">{{ whiteSpaceCharsCount }}</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="grid p-fluid" *ngIf="text">
         <div class="col-6">
             <p><strong>Total Characters:</strong> {{ charsCount }}</p>
