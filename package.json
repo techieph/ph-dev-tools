@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:github-pages": "ng build --configuration production --base-href /ph-dev-tools/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ph-dev-tools": "node dist/ph-dev-tools/server/server.mjs"
