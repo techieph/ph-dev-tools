@@ -1,0 +1,20 @@
+<nav id="sidebarMenu" class="sidebar">
+  <div class="position-sticky pt-3">
+    <ul class="nav flex-column">
+      <li class="nav-item" *ngFor="let item of menuItems">
+        <a class="nav-link" [routerLink]="item.route" [ngClass]="{'active': item.route === '/dashboard'}">
+          <i *ngIf="item.icon" [class]="item.icon"></i> <!-- Main item icon -->
+          {{ item.label }}
+        </a>
+        <ul *ngIf="item.children" class="nav flex-column ms-3">
+          <li class="nav-item" *ngFor="let child of item.children">
+            <a class="nav-link" [routerLink]="child.route">
+              <i *ngIf="child.icon" [class]="child.icon"></i> <!-- Sub-item icon -->
+              {{ child.label }}
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>

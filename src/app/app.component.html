@@ -1,1 +1,24 @@
-<router-outlet></router-outlet>
+<!-- 
+<div class="d-flex flex-column h-100 row">
+  <app-header></app-header>
+  <app-sidebar></app-sidebar>
+  <div class="h-25" class="content">
+    <router-outlet></router-outlet>
+  </div>
+  <app-footer class="h-25"></app-footer>
+</div> -->
+
+<div class="app-container p-0 m-0">
+  <app-header></app-header>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-3 col-lg-2 d-md-block bg-light">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <router-outlet></router-outlet>
+        <app-footer class="h-25"></app-footer>
+      </div>
+    </div>
+  </div>
+</div>
