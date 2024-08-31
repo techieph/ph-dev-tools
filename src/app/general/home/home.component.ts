@@ -5,13 +5,13 @@ import { Subscription } from 'rxjs';
 import { ExcelDataReaderService } from '../../services/excel-data-reader.service';
 
 @Component({
-  selector: 'app-excel-viewer',
+  selector: 'app-home',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  templateUrl: './excel-viewer.component.html',
-  styleUrl: './excel-viewer.component.scss'
+  templateUrl: './home.component.html',
+  styleUrl: './home.component.scss'
 })
-export class ExcelViewerComponent {
+export class HomeComponent {
 
     sheets!: string[];
     sheetsData!: {[key: string]: any[][]};
@@ -21,16 +21,6 @@ export class ExcelViewerComponent {
     constructor(private excelDataReaderService: ExcelDataReaderService) {}
 
     ngOnInit() {
-    }
-
-    onExcelFileUpload(evt: any) {
-        const target: DataTransfer = <DataTransfer>(evt.target);
-        this.excelDataReaderService.readExcelFile(target.files[0]).then(data => {
-            this.sheetsData = data;
-            this.sheets = Object.keys(this.sheetsData);
-          }).catch(error => {
-            console.error("Error reading Excel file", error);
-          });
     }
 
     ngOnDestroy() {

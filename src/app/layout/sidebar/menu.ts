@@ -7,8 +7,8 @@ export interface MenuItem {
 
 export const MENU_ITEMS: MenuItem[] = [
   {
-    label: 'Dashboard',
-    route: '/text-analysis',
+    label: 'Home',
+    route: '/home',
     icon: 'bi-house-door-fill'
   },
   {
@@ -16,7 +16,7 @@ export const MENU_ITEMS: MenuItem[] = [
     route: '/text-analysis',
     icon: 'bi-fonts',
     children: [
-      { label: 'Text Analysis', route: '/text/text-analysis', icon: 'bi-file-text' },
+      { label: 'Text Analysis', route: '/text-analysis', icon: 'bi-file-text' },
       { label: 'Difference Checker', route: '/text/diff-checker', icon: 'bi-file-diff' }
     ]
   },
@@ -36,11 +36,6 @@ export const MENU_ITEMS: MenuItem[] = [
       { label: 'SQL Formatter', route: '/formatter/sql', icon: 'bi-filetype-sql' },
       { label: 'XML Formatter', route: '/formatter/xml', icon: 'bi-filetype-xml' }
     ]
-  },
-  {
-    label: 'Orders',
-    route: '/orders',
-    icon: 'bi-bag-fill'
   },
   {
     label: 'Settings',
