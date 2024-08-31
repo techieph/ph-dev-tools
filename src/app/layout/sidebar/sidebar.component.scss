@@ -1,11 +1,11 @@
 .sidebar {
   position: sticky;
-  height: 100vh;
+  height: calc(100vh - 3.4rem);
   font-size: .875rem;
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 100; /* Behind the navbar */
+  z-index: 100;
 }
 
 @media (max-width: 767.98px) {
@@ -17,10 +17,10 @@
 .sidebar-sticky {
   position: relative;
   top: 0;
-  height: calc(100vh - 48px);
+  height: calc(100vh - 3.4rem);
   padding-top: .5rem;
   overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  overflow-y: auto;
 }
 
 .sidebar .nav-link {
