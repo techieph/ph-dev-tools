@@ -1,0 +1,54 @@
+<div class="py-3">
+    <div class="mb-3">
+        <label for="formFile" class="form-label">Choose the excel file which needs to be viewed (.xlsx, .xlsm, .xlsb, .xls, .csv)</label>
+        <input class="form-control" type="file" multiple="false"
+         (change)="onExcelFileUpload($event)">
+    </div>
+    <div class="container mt-4" *ngIf="sheetsData">
+        <h4>Uploaded Excel Sheets Data</h4>
+        <div class="accordion" id="accordionExample">
+          <ng-container *ngIf="sheets && sheets.length > 0">
+            <ng-container *ngFor="let sheetName of sheets">
+              <div class="accordion-item">
+                <h2 class="accordion-header" [attr.id]="'heading-' + sheetName">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    [attr.data-bs-target]="'#collapse-' + sheetName"
+                    [attr.aria-expanded]="sheetName === sheets[0] ? 'true' : 'false'"
+                    [attr.aria-controls]="'collapse-' + sheetName"
+                  >
+                    Sheet - "{{ sheetName }}"
+                  </button>
+                </h2>
+                <div
+                  [attr.id]="'collapse-' + sheetName"
+                  class="accordion-collapse collapse"
+                  [class.show]="sheetName === sheets[0]"
+                  [attr.aria-labelledby]="'heading-' + sheetName"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body">
+                    <div class="table-responsive">
+                      <table class="table table-striped table-bordered">
+                        <thead>
+                          <tr>
+                            <th *ngFor="let header of sheetsData[sheetName][0]">{{ header }}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let row of sheetsData[sheetName].slice(1)">
+                            <td *ngFor="let cell of row">{{ cell }}</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </ng-container>
+          </ng-container>
+        </div>
+      </div>
+</div>
